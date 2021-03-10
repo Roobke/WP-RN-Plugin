@@ -53,9 +53,6 @@
 		    if ($nqs_info['all_lang']['settings']['no_yes']) {
 		  		add_action('admin_menu', array(&$this, 'remove_menus'));
 			}
-
-			add_action('wp_dashboard_setup', array(&$this, 'disable_browser_upgrade_warning'));
-    		remove_action('welcome_panel', 'wp_welcome_panel');
 		}
 
 		public function admin_head() { ?>
@@ -89,11 +86,6 @@
 		public function create_taxonomies()
 		{
 
-		}
-		
-		public function disable_browser_upgrade_warning()
-		{
-			remove_meta_box('dashboard_browser_nag', 'dashboard', 'normal');
 		}
 	}
 	
