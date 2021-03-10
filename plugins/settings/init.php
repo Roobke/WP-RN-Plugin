@@ -4,13 +4,6 @@
 		
 		$keys = array(
 			'no_yes',
-			'dhl_express_shipping_per_kg',
-			'dhl_express_delivery_time',
-			'dhl_cargo_shipping_per_kg',
-			'dhl_cargo_delivery_time',
-			'dsv_pallet_shipping_per_m3',
-			'dsv_pallet_delivery_time',
-			'kr_rate_of_exchange',
 		);
 		
 		if (isset($_POST['nqs_info']['all_lang'])) {
@@ -20,10 +13,6 @@
 						$value = absint($value);
 
 						if ($value > 1) $value = 0;
-					} else if ($key == 'dhl_express_shipping_per_kg' || $key == 'dhl_cargo_shipping_per_kg' || $key == 'dsv_pallet_shipping_per_m3' || $key == 'kr_rate_of_exchange') {
-						$value = floatval($value);
-
-						if ($value < 0) $value = 0;
 					}
 
 					$this->nqs_info['all_lang']['settings'][$key] = $value;

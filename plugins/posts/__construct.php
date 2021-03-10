@@ -24,12 +24,10 @@
 			global $post, $wpdb, $current_user, $states_list;
 
 			if (empty($post)) return $post_id;
-
 			if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return $post_id;
-
 			if (!current_user_can('edit_post', $post_id)) return $post_id;
 			
-			include_once NQS_PLUGIN_DIR.'plugins/posts/post_save.php';
+			include_once(NQS_PLUGIN_DIR.'plugins/posts/post_save.php');
 			
 			return $post_id;
 		}

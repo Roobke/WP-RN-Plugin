@@ -101,5 +101,4 @@
 	
 	include_once("plugins/settings/__construct.php");
 	include_once("plugins/posts/__construct.php");
-
 ?>
